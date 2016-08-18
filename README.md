@@ -1,4 +1,4 @@
-[Problem Prompt](https://www.freecodecamp.com/challenges/build-a-voting-app)[Target Example](https://fcc-voting-arthow4n.herokuapp.com/)
+[Problem Prompt](https://www.freecodecamp.com/challenges/build-a-voting-app)  [Target Example](https://fcc-voting-arthow4n.herokuapp.com/)
 
 # User Stories
 An authenticated user:
