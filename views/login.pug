@@ -1,0 +1,10 @@
+extends ./layout.pug
+
+block  title
+  title Log in
+
+block content
+  form(name='login, action='/login', method='post')
+      input(type="text", name="user")
+      input(type="password", name="pass")
+      input(type="submit", value="login")

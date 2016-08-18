@@ -1,7 +1,7 @@
 module.exports = function(app){
 
   app.get('/', function(req, res){
-    res.render('layout');
+    console.log('this is polls router');
   });
 
   app.get('/polls', function(req, res){
@@ -13,5 +13,4 @@ module.exports = function(app){
     }
     res.render('polls', polls);
   });
-
 }
