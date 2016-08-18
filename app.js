@@ -3,14 +3,14 @@ var app = require('express')();
 var config = require('./config.js');
 var appPort = config.app.port;
 
-var router = require('./routers/index.js')(app);
+var router = require('./routes')(app);
 
-app.set('views', './views');    //set view dir
-app.set('view engine', 'pug'); //autorequires
+var passport = require('./controllers/authenticate.js')(app);
+app.use(passport.initialize());
+app.use(passport.session());
 
-// app.get('/', function(req, res){
-//   res.send('here');
-// });
+app.set('views', __dirname+'/views');    //set view dir
+app.set('view engine', 'pug');          //autorequires
 
 app.listen(appPort, function(){
   console.log('Listening on port ', appPort);
