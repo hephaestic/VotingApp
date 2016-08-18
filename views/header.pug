@@ -1,4 +1,10 @@
 header
   #bar
+  if(user)
+    a(href='/') Home
+    a(href='/mypolls') My Polls
+    a(href='/newPoll') New Poll
+    a(href='/signout') Sign out
+  else
     a(href='/') Home
     a(hred='/signin') Sign in
