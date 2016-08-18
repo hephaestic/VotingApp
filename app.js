@@ -1,19 +1,21 @@
-var app = require('express')();
+const express = require('express');
+const app = express();
 
-var config = require('./config.js');
-var appPort = config.app.port;
+const config = require('./config.js');
 
-var router = require('./routes')(app);
+const appPort = config.app.port;
 
-var passport = require('./controllers/authenticate.js')(app);
+require('./routes')(app);
+
+const passport = require('./controllers/authenticate.js')(app);
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(express.static(__dirname + '/public'));
 
-app.set('views', __dirname + '/views');    //set view dir
-app.set('view engine', 'pug');          //autorequires
+app.set('views', __dirname + '/views'); 	//set view dir
+app.set('view engine', 'pug'); 						//autorequires
 
-app.listen(appPort, function(){
-  console.log('Listening on port ', appPort);
-})
+app.listen(appPort, function() {
+	console.log('Listening on port ', appPort);
+});
