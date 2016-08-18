@@ -9,7 +9,9 @@ var passport = require('./controllers/authenticate.js')(app);
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.set('views', __dirname+'/views');    //set view dir
+app.use(express.static(__dirname + '/public'));
+
+app.set('views', __dirname + '/views');    //set view dir
 app.set('view engine', 'pug');          //autorequires
 
 app.listen(appPort, function(){
